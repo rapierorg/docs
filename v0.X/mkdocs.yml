@@ -1,0 +1,9 @@
+site_name: "versions/v0_X"
+
+nav:
+  - Welcome: index.md
+  - Building and running the example projects: examples.md
+  - Creating a new bot: creating-a-new-bot.md
+  - API introduction: api-introduction.md
+  - Parsing commands: parsing-commands.md
+  - Custom keyboard: custom-keyboard.md

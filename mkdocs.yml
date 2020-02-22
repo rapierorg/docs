@@ -1,0 +1,14 @@
+site_name: Telegram Bot Swift SDK Docs
+theme:
+  name: 'material'
+plugins:
+  - search
+  - monorepo
+markdown_extensions:
+  - codehilite
+  - admonition
+nav:
+  - Welcome: index.md
+  - Version:
+    - 0.X: '!include ./v0.X/mkdocs.yml'
+    - 2.0: '!include ./v2.0/mkdocs.yml'
