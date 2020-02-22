@@ -1,0 +1,623 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Creating a new bot - Telegram Bot Swift SDK Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#creating-a-new-bot" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Telegram Bot Swift SDK Docs" aria-label="Telegram Bot Swift SDK Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Telegram Bot Swift SDK Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Creating a new bot
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Telegram Bot Swift SDK Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Telegram Bot Swift SDK Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Version
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Version
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      0.X
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        0.X
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" title="Building and running the example projects" class="md-nav__link">
+      Building and running the example projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Creating a new bot
+      </label>
+    
+    <a href="./" title="Creating a new bot" class="md-nav__link md-nav__link--active">
+      Creating a new bot
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-project" class="md-nav__link">
+    Create the project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-xcode-project" class="md-nav__link">
+    Create Xcode project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-simple-bot" class="md-nav__link">
+    Create a simple bot
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-introduction/" title="API introduction" class="md-nav__link">
+      API introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../parsing-commands/" title="Parsing commands" class="md-nav__link">
+      Parsing commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom-keyboard/" title="Custom keyboard" class="md-nav__link">
+      Custom keyboard
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      2.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        2.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../v2_0/" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-project" class="md-nav__link">
+    Create the project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-xcode-project" class="md-nav__link">
+    Create Xcode project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-simple-bot" class="md-nav__link">
+    Create a simple bot
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="creating-a-new-bot">Creating a new bot</h1>
+<h2 id="create-the-project">Create the project</h2>
+<p>Create a directory for the project, we'll call the bot <code>todo-bot</code>:</p>
+<div class="codehilite"><pre><span></span><code>mkdir todo-bot
+<span class="nb">cd</span> todo-bot
+swift package init --type executable
+</code></pre></div>
+
+
+<p>We now have the following project structure:</p>
+<div class="codehilite"><pre><span></span><code>├── Package.swift
+├── Sources
+│   └── todo-bot
+│       └── main.swift
+└── Tests
+</code></pre></div>
+
+
+<p>Edit Package.swift to look like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">import</span> <span class="nc">PackageDescription</span>
+
+<span class="kd">let</span> <span class="nv">package</span> <span class="p">=</span> <span class="n">Package</span><span class="p">(</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">&quot;todo-bot&quot;</span><span class="p">,</span>
+    <span class="n">products</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Products define the executables and libraries produced by a package, and make them visible to other packages.</span>
+        <span class="p">.</span><span class="n">executable</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">:</span> <span class="s">&quot;todo-bot&quot;</span><span class="p">,</span>
+            <span class="n">targets</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;todo-bot&quot;</span><span class="p">]),</span>
+        <span class="p">],</span>
+    <span class="n">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Dependencies declare other packages that this package depends on.</span>
+        <span class="c1">// .package(url: /* package url */, from: &quot;1.0.0&quot;),</span>
+        <span class="p">.</span><span class="n">package</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="s">&quot;https://github.com/zmeyc/telegram-bot-swift.git&quot;</span><span class="p">,</span> <span class="p">.</span><span class="n">branch</span><span class="p">(</span><span class="s">&quot;dev&quot;</span><span class="p">)),</span>
+        <span class="p">],</span>
+    <span class="n">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Targets are the basic building blocks of a package. A target can define a module or a test suite.</span>
+        <span class="c1">// Targets can depend on other targets in this package, and on products in packages which this package depends on.</span>
+        <span class="p">.</span><span class="n">target</span><span class="p">(</span>
+            <span class="n">name</span><span class="p">:</span> <span class="s">&quot;hello-bot&quot;</span><span class="p">,</span>
+            <span class="n">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;TelegramBotSDK&quot;</span><span class="p">]),</span>
+        <span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Run <code>swift build</code>:</p>
+<div class="codehilite"><pre><span></span><code>Fetching https://github.com/zmeyc/telegram-bot-swift.git
+Fetching https://github.com/zmeyc/CCurl.git
+Cloning https://github.com/zmeyc/telegram-bot-swift.git
+Resolving https://github.com/zmeyc/telegram-bot-swift.git at dev
+Cloning https://github.com/zmeyc/CCurl.git
+Resolving https://github.com/zmeyc/CCurl.git at <span class="m">0</span>.0.2
+Compile Swift Module <span class="s1">&#39;TelegramBotSDK&#39;</span> <span class="o">(</span><span class="m">195</span> sources<span class="o">)</span>
+Compile Swift Module <span class="s1">&#39;todo_bot&#39;</span> <span class="o">(</span><span class="m">1</span> sources<span class="o">)</span>
+Linking ./.build/x86_64-apple-macosx10.10/debug/todo-bot
+</code></pre></div>
+
+
+<p>Try running <code>.build/x86_64-apple-macosx10.10/debug/todo-bot</code>:</p>
+<div class="codehilite"><pre><span></span><code>Hello, world!
+</code></pre></div>
+
+
+<h2 id="create-xcode-project">Create Xcode project</h2>
+<p>Working from command-line without autocomplete is not very convenient. To create Xcode project, run:</p>
+<div class="codehilite"><pre><span></span><code>swift package generate-xcodeproj
+</code></pre></div>
+
+
+<p>This will produce <code>todo-bot.xcodeproj</code>. Open it in Xcode and switch scheme to the bottom one:</p>
+<p><img alt="Scheme" src="../img/scheme.jpg" /></p>
+<p>Build the project and run it.</p>
+<h2 id="create-a-simple-bot">Create a simple bot</h2>
+<p>Edit <code>Sources/main.swift</code> to look like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">import</span> <span class="nc">TelegramBot</span>
+
+<span class="kd">let</span> <span class="nv">bot</span> <span class="p">=</span> <span class="n">TelegramBot</span><span class="p">(</span><span class="n">token</span><span class="p">:</span> <span class="s">&quot;TOKEN&quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kd">let</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">bot</span><span class="p">.</span><span class="n">nextUpdateSync</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="kd">let</span> <span class="nv">from</span> <span class="p">=</span> <span class="n">message</span><span class="p">.</span><span class="n">from</span> <span class="k">else</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">message</span> <span class="p">=</span> <span class="n">update</span><span class="p">.</span><span class="n">message</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">text</span> <span class="p">=</span> <span class="n">message</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">from</span> <span class="p">=</span> <span class="n">message</span><span class="p">.</span><span class="n">from</span> <span class="p">{</span>
+        <span class="n">bot</span><span class="p">.</span><span class="n">sendMessageAsync</span><span class="p">(</span><span class="n">chat_id</span><span class="p">:</span> <span class="n">message</span><span class="p">.</span><span class="n">from</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+                             <span class="n">text</span><span class="p">:</span> <span class="s">&quot;Hi </span><span class="si">\(</span><span class="n">from</span><span class="p">.</span><span class="n">first_name</span><span class="si">)</span><span class="s">! You said: </span><span class="si">\(</span><span class="n">text</span><span class="si">)</span><span class="s">.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;Server stopped due to error: </span><span class="si">\(</span><span class="n">bot</span><span class="p">.</span><span class="n">lastError</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Replace TOKEN with the token obtained from <a href="https://core.telegram.org/bots#6-botfather">BotFather</a>.</p>
+<p>Run <code>swift build</code>. If there are no compilation errors, run <code>.build/x86_64-apple-macosx10.10/debug/todo-bot</code>.</p>
+<p>If you get <code>fatal error: Unable to fetch bot information</code>, verify that the token is correct.
+Otherwise, the bot is ready to accept commands.</p>
+<p>Find your bot in Telegram and send him something.</p>
+<p><img alt="Hello Bot" src="../img/hello_bot.png" /></p>
+<p>Congratulations, you've just created a simple bot!</p>
+<p><a href="../api-introduction/">Next: API Introduction</a></p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../examples/" title="Building and running the example projects" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Building and running the example projects
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../api-introduction/" title="API introduction" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                API introduction
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>

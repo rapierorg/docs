@@ -1,1 +1,0 @@
-# TelegramBotSDK for Swift Docs
